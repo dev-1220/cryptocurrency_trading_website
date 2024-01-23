@@ -1,0 +1,17 @@
+{% extends 'CryptoWebsite/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <link href="https://bootswatch.com/5/minty/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <div class="container">
+        <h1 class="mt-4"> We value Your Feedback</h1>
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+{#                 {% crispy form %}#}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div class="thank-you mt-3" style="display: none;">Thank you for your feedback!</div>
+        </div>
+    </div>
+{% endblock %}

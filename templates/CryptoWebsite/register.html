@@ -1,0 +1,51 @@
+{% extends 'CryptoWebsite/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <link href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <h2 >Create an Account</h2>
+  <div class="container mt-4 d-flex justify-content-center align-items-center">
+    <form method="post" enctype="multipart/form-data" class="d-flex flex-column">
+      {% csrf_token %}
+      {% if user_errors %}
+        <div class="alert alert-danger" role="alert">
+          {{ user_errors }}
+        </div>
+      {% endif %}
+      {% if profile_errors %}
+        <div class="alert alert-danger" role="alert">
+          {{ profile_errors }}
+        </div>
+      {% endif %}
+
+
+      {{ profile_form.first_name | as_crispy_field }}
+
+
+      {{ profile_form.last_name | as_crispy_field }}
+
+
+      {{ user_form.username | as_crispy_field }}
+
+
+      {{ user_form.email | as_crispy_field }}
+
+
+      {{ profile_form.date_of_birth | as_crispy_field }}
+
+
+      {{ profile_form.phone_no | as_crispy_field }}
+
+
+      {{ user_form.password1 | as_crispy_field }}
+
+
+      {{ user_form.password2 | as_crispy_field }}
+
+        {{ profile_form.profile_image | as_crispy_field }}
+
+      {# Include other profile form fields here if applicable #}
+
+      <button type="submit" class="btn btn-secondary">Register</button>
+    </form>
+  </div>
+{% endblock %}

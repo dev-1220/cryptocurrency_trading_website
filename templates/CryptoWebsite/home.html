@@ -1,0 +1,19 @@
+{% extends 'CryptoWebsite/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+<div class="d-flex flex-grow-1" style="width: fit-content">
+    <div class="col-md-12">
+        {% block content %}
+            <link href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+            <h1 class="text-center">Welcome to Coin Geeks</h1>
+{#            <p class="text-centre">Start Trading</p>#}
+
+            <img src="https://i.pinimg.com/originals/06/a2/31/06a2312ada3efca32bf4161eb660cb03.gif" class="img-fluid" alt="Full-width Image" style="display: flex">
+        {% endblock %}
+    </div>
+    <footer>
+        <p>&copy; 2023 Your Cryptocurrency Website. All rights reserved.</p>
+    </footer>
+</div>
